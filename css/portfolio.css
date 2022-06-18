@@ -1,0 +1,140 @@
+:root[color-theme="red"] {
+   /* 속성선택자를 활용 */
+   --background: #780000;
+   /* let --background = #780000 */
+   --fontColor: #222;
+}
+
+/*  --는 뒤 변수에 뒤 값을 저장한다라는 의미 */
+
+/* css에서 변수주기
+   --변수명  <-변수선언 
+*/
+
+/* 
+let --background;
+let --fontcolor;
+
+if(root.getAttribute("color-theme") == "red"){
+   --background = #780000;
+   --fontColor: #222;
+} else(root.getAttribute("color-theme") == "dark"){
+   --background = #000;
+   --fontColor: #fff;
+}
+
+*/
+
+:root[color-theme="dark"] {
+   --background: #003049;
+   /* let background = #003049 */
+   --fontColor: #000;
+}
+
+html {
+   width: 100%;
+   height: 100vh;
+   background-color: var(--background);
+   /* :root의 모든 변수선언되면 바로 위가 적용됨 */
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poiret One", cursive;
+}
+
+body::-webkit-scrollbar {
+   display: none;
+}
+
+header {
+   width: 100%;
+   height: 3rem;
+   text-align: right;
+   padding-top: 1rem;
+   padding-right: 3rem;
+}
+
+header > span {
+   cursor: pointer;
+}
+
+section {
+   width: 100%;
+   height: 100vh;
+   background-color: var(--background);
+   /* 위에 선언한 변수를 가지고 와서 바로 적용한다 */
+}
+
+#smallCircle {
+   position: absolute;
+   width: 32rem;
+   height: 32rem;
+   top: -10rem;
+   left: -10rem;
+   opacity: 0.1;
+   border-radius: 50%;
+   background-color: #fff;
+}
+
+#bigCircle {
+   position: absolute;
+   width: 46rem;
+   height: 46rem;
+   bottom: -5rem;
+   right: -18rem;
+   opacity: 0.08;
+   border-radius: 50%;
+   background-color: #fff;
+}
+
+.flexAlignStart {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.flexCenter {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.flexAlignStart > div {
+   margin-left: 4rem;
+}
+
+.flexAlignStart > div > div {
+   margin-bottom: 1rem;
+}
+
+#projectBox {
+   width: 100%;
+   height: 90vh;
+   font-size: 3rem;
+   font-weight: bold;
+   color: var(--fontColor);
+}
+#aboutme {
+   color: var(--fontColor);
+}
+.contact {
+   height: 70%;
+}
+
+.footer {
+   height: 30%;
+}
+
+#blurheader{
+   z-index: 100;
+   width: 100%;
+   height: 3rem;
+   background-color: #fff;
+   opacity: 0.4;
+   position: fixed;
+   display: none;
+}
+

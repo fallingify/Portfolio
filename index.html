@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>포트폴리오</title>
+      <style>
+         @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+      </style>
+      <link rel="stylesheet" href="./css/common.css" />
+      <link rel="stylesheet" href="./css/portfolio.css" />
+   </head>
+   <body>
+      <div>
+        <div id="blurheader"></div>
+         <section id="wrap">
+            <header><span id="darkMode" class="whiteFont">DARK</span></header>
+            <div id="smallCircle"></div>
+            <div class="fontsize15rem whiteFont bold subject">Hi,</div>
+            <div class="fontsize10rem whiteFont bold subject line80">
+               IM JI- <br />
+               HOON
+            </div>
+            <div id="bigCircle" data-id="jihoon"></div>
+         </section>
+         <section>
+            <div class="whiteFont fontsize5rem centerTextBox10 bold">
+               JIHOON'S PORTFOLIO
+            </div>
+            <div
+               id="aboutme"
+               class="fontsize2rem bold centerTextBox10 whiteBackground"
+            >
+               ABOUT ME
+            </div>
+            <div>
+               <p class="fontsize3rem whiteFont bold subject">SKILLS</p>
+               <div class="flexAlignStart">
+                  <div class="whiteboxWidth whiteBox17rem"></div>
+                  <div>
+                     <div class="whiteboxWidth whiteBox7rem"></div>
+                     <div class="whiteboxWidth whiteBox10rem"></div>
+                  </div>
+                  <div class="whiteboxWidth whiteBox13rem"></div>
+                  <div class="whiteboxWidth whiteBox18rem"></div>
+               </div>
+            </div>
+         </section>
+         <section class="flexCenter">
+            <div id="projectBox" class="whiteBackground flexCenter">
+               PROJECT 01
+            </div>
+         </section>
+         <section>
+            <div class="whiteFont fontsize3rem bold subject contact">
+               CONTACT ME
+            </div>
+            <div class="footer whiteBackground"></div>
+         </section>
+      </div>
+      <script>
+        window.onscroll = function(){
+            if(
+                document.body.scrollTop > 48 ||
+                document.documentElement.scrollTop > 48
+            ){
+                document.getElementById("blurheader").style.display= "block";
+            }else{
+                document.getElementById("blurheader").style.display = "none";
+            }
+        }
+
+        
+         window.onload = function () {
+            //html다 읽고 수행한다
+            console.log(
+               document.getElementById("bigCircle").getAttribute("data-id")
+            );
+            console.log(
+               document.getElementById("bigCircle").getAttribute("class")
+            );
+
+            document.documentElement.setAttribute("color-theme", "red");
+
+            ///최상위 root에 이 속성을 셋팅해준겁니다
+
+            //:root는 가상요소선택자임
+            //:root 는 지붕이라는 의미로 최상위요소를 가리키는 가상속성선택자임.
+            //:root 는 최상위요소(노드)로
+            //document.documentElement 와 css에서의 :root는 같으며
+            //document.documentElement는 여기서는 최상인 <html>태그를 가리킨다.
+            //css 가상속성선택자를 체크
+         };
+
+         let darkMode = document.getElementById("darkMode");
+
+         darkMode.addEventListener("click", (e) => {
+            //e 이벤트가 일어난 객체가 뭔지를 가리킴
+            //e.target 일어난 객체를 선택(가져옴)
+            //e.target.innerText 일어난 객체를 선택해 innnerText속성을 선택(가져옴)
+            if (e.target.innerText == "DARK") {
+               //e 는 최상위 객체를 가리킨다
+               document.documentElement.setAttribute("color-theme", "dark");
+               //다크를적용하고
+               e.target.innerText = "red";
+               //innerText에는 red의 텍스트로 바꿔준다
+            } else {
+               document.documentElement.setAttribute("color-theme", "red");
+               e.target.innerText = "dark";
+            }
+         });
+      </script>
+   </body>
+</html>
